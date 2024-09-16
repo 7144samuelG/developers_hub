@@ -1,11 +1,7 @@
 "use client";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
 import { api } from "@/convex/_generated/api";
-import { GetUser } from "@/features/auth/api/get-user";
 import { useQuery } from "convex/react";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import ReturnUser from "./get-user";
 import Renderer from "./renderer";
