@@ -1,12 +1,15 @@
 // import dynamic from "next/dynamic";
 "use client";
+
 import { useRef, useState } from "react";
-import Editor from "./_componets/editor";
+// import Editor from "./_componets/editor";
+const Editor=dynamic(()=>import("./_componets/editor"),{ssr:false})
 import Quill from "quill";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { toast } from "sonner";
 import { Id } from "@/convex/_generated/dataModel";
+import dynamic from "next/dynamic";
 
 type articleValues = {
   body: string;

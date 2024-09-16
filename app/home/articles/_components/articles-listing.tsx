@@ -4,19 +4,20 @@ import { api } from "@/convex/_generated/api";
 import { useQuery } from "convex/react";
 import { useRouter } from "next/navigation";
 import ReturnUser from "./get-user";
-import Renderer from "./renderer";
-
+import dynamic from "next/dynamic";
+// import Renderer from "./renderer";
+const Renderer=dynamic(()=>import("./renderer"),{ssr:false})
 const ArticlesListing = () => {
   const router = useRouter();
   const articlesdata = useQuery(api.articles.listallarticles);
 
-  // if (articlesdata?.length == 0) {
-  //   return (
-  //     <div className="h-full flex items-center justify-center">
-  //       no article found
-  //     </div>
-  //   );
-  // }
+  if (articlesdata?.length == 0) {
+    return (
+      <div className="h-full flex items-center justify-center">
+        no article found
+      </div>
+    );
+  }
 
   function convertTimestampToDate(timestamp?: number): string {
     if (typeof timestamp !== "number" || isNaN(timestamp)) {
