@@ -9,14 +9,14 @@ import Renderer from "./renderer";
 const ArticlesListing = () => {
   const router = useRouter();
   const articlesdata = useQuery(api.articles.listallarticles);
-  console.log(articlesdata, "art");
-  if (articlesdata?.length == 0) {
-    return (
-      <div className="h-full flex items-center justify-center">
-        no article found
-      </div>
-    );
-  }
+
+  // if (articlesdata?.length == 0) {
+  //   return (
+  //     <div className="h-full flex items-center justify-center">
+  //       no article found
+  //     </div>
+  //   );
+  // }
 
   function convertTimestampToDate(timestamp?: number): string {
     if (typeof timestamp !== "number" || isNaN(timestamp)) {
