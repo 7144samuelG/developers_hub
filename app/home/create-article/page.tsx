@@ -57,7 +57,7 @@ const ArticlePage = () => {
     } finally {
       setIsPending(false);
     }
-  };
+  }
   return (
     <div className="h-full border w-full ">
       <Editor

@@ -20,7 +20,7 @@ const ArticlesPage = () => {
           </>
         )}
       </div>
-      <ArticlesListing/>
+      <ArticlesListing />
     </div>
   );
 };
