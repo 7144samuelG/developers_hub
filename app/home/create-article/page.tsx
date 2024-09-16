@@ -7,18 +7,16 @@ import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { toast } from "sonner";
 import { Id } from "@/convex/_generated/dataModel";
-interface ArticleProps {
-  placeholder: string;
-}
+
 type articleValues = {
   body: string;
   image: Id<"_storage"> | undefined;
 };
 // const Editor=dynamic(()=>import("./_componets/editor"),{ssr:false})
-const ArticlePage = ({ placeholder }: ArticleProps) => {
+const ArticlePage = () => {
   const editorRef = useRef<Quill | null>(null);
   const createnewarticle = useMutation(api.articles.createarticle);
-  const [editorKey, setEditorKay] = useState(0);
+
   const [pending, setIsPending] = useState(false);
   const uploadurl = useMutation(api.upload.generateUploadUrl);
 
